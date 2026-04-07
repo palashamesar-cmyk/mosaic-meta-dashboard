@@ -523,7 +523,7 @@ function renderOverall(d) {
   renderKPIs('kpiGrid', [
     { label:'Total Spends',  value: fmtINR(t.spends),       sub: fmtINR(t.spends / Math.max(1, d.daily.length)) + ' / day', color:'primary' },
     { label:'Total NCs',     value: fmtNum(t.ncs),          sub: fmtNum(t.ncs / Math.max(1, d.daily.length), 1) + ' NCs / day', color:'green'   },
-    { label:'CAC',           value: '‚Çπ' + fmtNum(t.cac, 0), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',           value: '‚Çπ' + fmtNum(t.cac, 2), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',          value: fmtNum(t.roas, 2) + 'x',sub: 'Revenue / Spends',                     color: t.roas > 2 ? 'green' : 'yellow' },
     { label:'Prepaid %',     value: fmtPct(t.prepaidPct),   sub: fmtNum(t.prepaid, 0) + ' prepaid NCs',  color:'blue'    },
     { label:'ATC %',         value: fmtPct(t.atcRate),      sub: 'Add to Cart rate',                     color:'purple'  },
@@ -564,7 +564,7 @@ function renderOverall(d) {
     { key:'category',    label:'cat',     fmt: v => `<span style="color:var(--text2)">${v}</span>` },
     { key:'spends',      label:'spends',  fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.products,'spends') },
     { key:'ncs',         label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',         label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',         label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',        label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num', colorFn: v => v > 2 ? 'good' : v > 1 ? 'warn' : 'bad' },
     { key:'prepaidPct',  label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',     label:'atc',     fmt: fmtPct,  cls:'td-num' },
@@ -579,7 +579,7 @@ function renderOverall(d) {
     { key:'date',       label:'date',    fmt: v => v },
     { key:'spends',     label:'spends',  fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',        label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',       label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num' },
     { key:'prepaidPct', label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',    label:'atc',     fmt: fmtPct,  cls:'td-num' },
@@ -599,7 +599,7 @@ function renderProduct(d) {
   renderKPIs('prodKpiGrid', [
     { label:'Spends',    value: fmtINR(t.spends),        sub: '', color:'primary' },
     { label:'NCs',       value: fmtNum(t.ncs),           sub: '', color:'green'   },
-    { label:'CAC',       value: '‚Çπ' + fmtNum(t.cac, 0), sub: '', color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',       value: '‚Çπ' + fmtNum(t.cac, 2), sub: '', color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',      value: fmtNum(t.roas, 2) + 'x',sub: '', color: t.roas > 2 ? 'green':'yellow' },
     { label:'Prepaid %', value: fmtPct(t.prepaidPct),    sub: '', color:'blue'   },
     { label:'CTR %',     value: fmtPct(t.ctr),           sub: '', color:'primary' },
@@ -626,7 +626,7 @@ function renderProduct(d) {
     { key:'name',       fmt: v => `<span class="td-name">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.campaigns,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
@@ -642,7 +642,7 @@ function renderProduct(d) {
     { key:'campaign',   fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.adsets,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
@@ -666,7 +666,7 @@ function renderProduct(d) {
     { key:'adset',      fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num', bar:true, barMax: maxOf(adsSorted,'ncs'), barColor:'green' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
     { key:'atcRate',    fmt: fmtPct,  cls:'td-num' },
@@ -883,11 +883,12 @@ function fmtNum(v, dec=0) {
 }
 
 function fmtINR(v) {
+  if (!v && v !== 0) return '‚Äì';
   if (!v) return '‚Çπ0';
   if (v >= 1e7) return '‚Çπ' + (v/1e7).toFixed(2) + 'Cr';
-  if (v >= 1e5) return '‚Çπ' + (v/1e5).toFixed(1) + 'L';
-  if (v >= 1e3) return '‚Çπ' + (v/1e3).toFixed(1) + 'K';
-  return '‚Çπ' + Math.round(v);
+  if (v >= 1e5) return '‚Çπ' + (v/1e5).toFixed(2) + 'L';
+  if (v >= 1e3) return '‚Çπ' + (v/1e3).toFixed(2) + 'K';
+  return '‚Çπ' + v.toFixed(2);
 }
 
 function fmtPct(v) {

@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Meta Ads Dashboard — Mosaic Wellness</title>
+<title>Meta Ads Dashboard ‚Äî Mosaic Wellness</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
-/* ── Reset & Base ──────────────────────────────────── */
+/* ‚îÄ‚îÄ Reset & Base ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0d1117;--surface:#161b22;--surface2:#21262d;
@@ -29,7 +29,7 @@ a{color:var(--primary);text-decoration:none}
 button{cursor:pointer;font-family:inherit}
 input,select{font-family:inherit}
 
-/* ── Layout ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ Layout ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #app{display:flex;flex-direction:column;min-height:100vh}
 .header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;gap:20px;height:60px;position:sticky;top:0;z-index:100}
 .logo{font-size:16px;font-weight:700;color:var(--text);white-space:nowrap;display:flex;align-items:center;gap:10px}
@@ -59,7 +59,7 @@ main{flex:1;padding:24px;max-width:1600px;width:100%;margin:0 auto}
 .tab-content{display:none}
 .tab-content.active{display:block}
 
-/* ── KPI Cards ──────────────────────────────────────── */
+/* ‚îÄ‚îÄ KPI Cards ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:24px}
 .kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;position:relative;overflow:hidden;transition:var(--transition)}
 .kpi-card:hover{border-color:var(--border2);transform:translateY(-1px)}
@@ -78,7 +78,7 @@ main{flex:1;padding:24px;max-width:1600px;width:100%;margin:0 auto}
 .kpi-delta.neg{color:var(--red);background:var(--red-dim)}
 .kpi-delta.neu{color:var(--text3);background:var(--surface2)}
 
-/* ── Charts ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ Charts ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .charts-row{display:grid;gap:16px;margin-bottom:24px}
 .charts-row.cols-2{grid-template-columns:1fr 1fr}
 .charts-row.cols-3{grid-template-columns:2fr 1fr}
@@ -88,7 +88,7 @@ main{flex:1;padding:24px;max-width:1600px;width:100%;margin:0 auto}
 .chart-wrap{position:relative}
 .chart-wrap canvas{max-height:260px}
 
-/* ── Tables ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ Tables ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:24px}
 .section-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
 .section-title{font-size:13px;font-weight:600;color:var(--text)}
@@ -100,8 +100,8 @@ thead tr{background:var(--surface2)}
 th{padding:10px 14px;text-align:left;font-weight:600;color:var(--text2);font-size:11px;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;cursor:pointer;user-select:none;border-bottom:1px solid var(--border)}
 th:hover{color:var(--text)}
 th .sort-icon{opacity:.4;margin-left:4px;font-size:10px}
-th.sorted-asc .sort-icon::after{content:'▲';opacity:1}
-th.sorted-desc .sort-icon::after{content:'▼';opacity:1}
+th.sorted-asc .sort-icon::after{content:'‚ñ≤';opacity:1}
+th.sorted-desc .sort-icon::after{content:'‚ñº';opacity:1}
 td{padding:9px 14px;border-bottom:1px solid var(--border2);color:var(--text);white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,.025)}
@@ -118,11 +118,11 @@ tr:hover td{background:rgba(255,255,255,.025)}
 .pill.warn{background:var(--yellow-dim);color:var(--yellow)}
 .pill.bad{background:var(--red-dim);color:var(--red)}
 
-/* ── Section: Breakdown grid ────────────────────────── */
+/* ‚îÄ‚îÄ Section: Breakdown grid ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
 .breakdown-grid .chart-card canvas{max-height:220px}
 
-/* ── Loading / Error ─────────────────────────────────── */
+/* ‚îÄ‚îÄ Loading / Error ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .overlay{position:fixed;inset:0;background:rgba(13,17,23,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:999}
 .spinner{width:40px;height:40px;border:3px solid var(--surface2);border-top-color:var(--primary);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -131,7 +131,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
 .config-note{background:var(--yellow-dim);border:1px solid var(--yellow);color:var(--yellow);padding:14px 18px;border-radius:var(--radius);margin-bottom:24px;font-size:13px;line-height:1.7}
 .config-note strong{display:block;margin-bottom:4px}
 
-/* ── Responsive ─────────────────────────────────────── */
+/* ‚îÄ‚îÄ Responsive ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 @media(max-width:900px){
   .charts-row.cols-2,.charts-row.cols-3,.breakdown-grid{grid-template-columns:1fr}
   .controls{gap:10px}
@@ -142,19 +142,19 @@ tr:hover td{background:rgba(255,255,255,.025)}
 <body>
 <div id="app">
 
-  <!-- ── Header ─────────────────────────────────────── -->
+  <!-- ‚îÄ‚îÄ Header ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
   <header class="header">
     <div class="logo">
       <div class="logo-dot"></div>
       Meta Ads Dashboard
     </div>
     <div class="header-right">
-      <span class="last-updated" id="lastUpdated">–</span>
-      <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+      <span class="last-updated" id="lastUpdated">‚Äì</span>
+      <button class="refresh-btn" onclick="loadData()">‚Üª Refresh</button>
     </div>
   </header>
 
-  <!-- ── Controls ───────────────────────────────────── -->
+  <!-- ‚îÄ‚îÄ Controls ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
   <div class="controls">
     <div class="control-group">
       <span class="control-label">From</span>
@@ -181,17 +181,17 @@ tr:hover td{background:rgba(255,255,255,.025)}
     </div>
   </div>
 
-  <!-- ── Tab Nav ─────────────────────────────────────── -->
+  <!-- ‚îÄ‚îÄ Tab Nav ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
   <nav class="tabs">
     <button class="tab active" onclick="switchTab('overall', this)">Overall Performance</button>
     <button class="tab" onclick="switchTab('product', this)">Product / Category</button>
   </nav>
 
-  <!-- ── Main ────────────────────────────────────────── -->
+  <!-- ‚îÄ‚îÄ Main ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
   <main>
     <div id="errorBanner" class="error-banner"></div>
 
-    <!-- ─── Tab: Overall ──────────────────────────── -->
+    <!-- ‚îÄ‚îÄ‚îÄ Tab: Overall ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
     <div id="tab-overall" class="tab-content active">
 
       <!-- KPI Cards -->
@@ -215,7 +215,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="charts-row cols-2">
         <div class="chart-card">
           <div class="chart-title">CAC &amp; Prepaid % Trend</div>
-          <div class="chart-sub">Daily CAC (₹) vs Prepaid conversion %</div>
+          <div class="chart-sub">Daily CAC (‚Çπ) vs Prepaid conversion %</div>
           <div class="chart-wrap"><canvas id="chartCACPrepaid"></canvas></div>
         </div>
         <div class="chart-card">
@@ -229,14 +229,14 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Product Performance</span>
-          <span class="section-sub">Sorted by Spends ↓</span>
+          <span class="section-sub">Sorted by Spends ‚Üì</span>
         </div>
         <div class="table-wrap">
           <table id="tableProducts">
             <thead><tr>
               <th>Product <span class="sort-icon"></span></th>
               <th>Category <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ₹ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -261,7 +261,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
           <table id="tableDaily">
             <thead><tr>
               <th>Date <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ₹ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -279,7 +279,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
       </div>
     </div><!-- /tab-overall -->
 
-    <!-- ─── Tab: Product ───────────────────────────── -->
+    <!-- ‚îÄ‚îÄ‚îÄ Tab: Product ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
     <div id="tab-product" class="tab-content">
 
       <!-- KPIs for selected product -->
@@ -303,13 +303,13 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Campaign Level</span>
-          <span class="section-badge" id="campCount">–</span>
+          <span class="section-badge" id="campCount">‚Äì</span>
         </div>
         <div class="table-wrap">
           <table id="tableCampaigns">
             <thead><tr>
               <th>Campaign <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ₹ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -329,14 +329,14 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Ad Set Level</span>
-          <span class="section-badge" id="adsetCount">–</span>
+          <span class="section-badge" id="adsetCount">‚Äì</span>
         </div>
         <div class="table-wrap">
           <table id="tableAdsets">
             <thead><tr>
               <th>Ad Set <span class="sort-icon"></span></th>
               <th>Campaign <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ₹ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -379,7 +379,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Ad Leaderboard</span>
-          <span class="section-sub">Top 50 ads by NCs — click column headers to sort</span>
+          <span class="section-sub">Top 50 ads by NCs ‚Äî click column headers to sort</span>
         </div>
         <div class="table-wrap">
           <table id="tableAds">
@@ -387,7 +387,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
               <th>#</th>
               <th>Ad Name <span class="sort-icon"></span></th>
               <th>Ad Set <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ₹ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">CTR % <span class="sort-icon"></span></th>
@@ -405,21 +405,21 @@ tr:hover td{background:rgba(255,255,255,.025)}
   </main>
 </div><!-- /app -->
 
-<!-- ── Loading Overlay ──────────────────────────────── -->
+<!-- ‚îÄ‚îÄ Loading Overlay ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ -->
 <div id="overlay" class="overlay">
   <div class="spinner"></div>
-  <div class="overlay-text" id="overlayText">Loading data…</div>
+  <div class="overlay-text" id="overlayText">Loading data‚Ä¶</div>
 </div>
 
 <script>
-// ╔══════════════════════════════════════════════════════╗
-// ║  CONFIG — paste your Apps Script Web App URL here    ║
-// ╚══════════════════════════════════════════════════════╝
+// ‚ïî‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïó
+// ‚ïë  CONFIG ‚Äî paste your Apps Script Web App URL here    ‚ïë
+// ‚ïö‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïù
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhmiVKdGB_ynQ6Zrpfzfjmp_e5GYUxZD62ov6De2ZTL4m_15F-GgjFzD1RZ2mnmBTn/exec';
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  State
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 let state = {
   tab: 'overall',
   overall: null,
@@ -428,9 +428,9 @@ let state = {
   charts: {}
 };
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Init
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 window.addEventListener('DOMContentLoaded', async () => {
   // Default date range: last 30 days
   const today = new Date();
@@ -449,9 +449,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   await loadData();
 });
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Data Loading
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 async function loadFilters() {
   try {
     const res = await apiFetch({ action: 'filters' });
@@ -462,7 +462,7 @@ async function loadFilters() {
 }
 
 async function loadData() {
-  showOverlay('Loading data from Google Sheet…');
+  showOverlay('Loading data from Google Sheet‚Ä¶');
   clearError();
 
   const from = document.getElementById('fromDate').value;
@@ -498,9 +498,9 @@ async function apiFetch(params) {
   return res.json();
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Tab Switching
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function switchTab(name, btn) {
   state.tab = name;
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -515,28 +515,28 @@ function switchTab(name, btn) {
   loadData();
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Render Overall
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function renderOverall(d) {
   const t = d.totals;
   renderKPIs('kpiGrid', [
     { label:'Total Spends',  value: fmtINR(t.spends),       sub: fmtINR(t.spends / Math.max(1, d.daily.length)) + ' / day', color:'primary' },
     { label:'Total NCs',     value: fmtNum(t.ncs),          sub: fmtNum(t.ncs / Math.max(1, d.daily.length), 1) + ' NCs / day', color:'green'   },
-    { label:'CAC',           value: '₹' + fmtNum(t.cac, 0), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',           value: '‚Çπ' + fmtNum(t.cac, 0), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',          value: fmtNum(t.roas, 2) + 'x',sub: 'Revenue / Spends',                     color: t.roas > 2 ? 'green' : 'yellow' },
     { label:'Prepaid %',     value: fmtPct(t.prepaidPct),   sub: fmtNum(t.prepaid, 0) + ' prepaid NCs',  color:'blue'    },
     { label:'ATC %',         value: fmtPct(t.atcRate),      sub: 'Add to Cart rate',                     color:'purple'  },
     { label:'P %',           value: fmtPct(t.pRate),        sub: 'Purchase rate',                        color:'yellow'  },
     { label:'CTR %',         value: fmtPct(t.ctr),          sub: fmtNum(t.impressions/1e6, 2) + 'M impr',color:'primary' },
-    { label:'CPM',           value: '₹' + fmtNum(t.cpm, 0), sub: 'Cost per 1K impressions',              color:'primary' },
+    { label:'CPM',           value: '‚Çπ' + fmtNum(t.cpm, 0), sub: 'Cost per 1K impressions',              color:'primary' },
   ]);
 
   const dates = d.daily.map(x => x.date);
 
   // Chart 1: Spends + NCs dual axis
   renderDualAxisChart('chartDailyMain', dates,
-    { label:'Spends (₹)', data: d.daily.map(x => x.spends), color:'#6366f1' },
+    { label:'Spends (‚Çπ)', data: d.daily.map(x => x.spends), color:'#6366f1' },
     { label:'NCs',        data: d.daily.map(x => x.ncs),    color:'#3fb950' }
   );
 
@@ -548,7 +548,7 @@ function renderOverall(d) {
 
   // Chart 3: CAC + Prepaid% dual axis
   renderDualAxisChart('chartCACPrepaid', dates,
-    { label:'CAC (₹)',     data: d.daily.map(x => x.cac),        color:'#f85149' },
+    { label:'CAC (‚Çπ)',     data: d.daily.map(x => x.cac),        color:'#f85149' },
     { label:'Prepaid %',  data: d.daily.map(x => x.prepaidPct), color:'#58a6ff' }
   );
 
@@ -564,13 +564,13 @@ function renderOverall(d) {
     { key:'category',    label:'cat',     fmt: v => `<span style="color:var(--text2)">${v}</span>` },
     { key:'spends',      label:'spends',  fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.products,'spends') },
     { key:'ncs',         label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',         label:'cac',     fmt: v => '₹' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',         label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',        label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num', colorFn: v => v > 2 ? 'good' : v > 1 ? 'warn' : 'bad' },
     { key:'prepaidPct',  label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',     label:'atc',     fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',       label:'p',       fmt: fmtPct,  cls:'td-num' },
     { key:'ctr',         label:'ctr',     fmt: fmtPct,  cls:'td-num' },
-    { key:'cpm',         label:'cpm',     fmt: v => '₹' + fmtNum(v, 0), cls:'td-num' },
+    { key:'cpm',         label:'cpm',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num' },
   ]);
 
   // Daily table (reversed: newest first)
@@ -579,27 +579,27 @@ function renderOverall(d) {
     { key:'date',       label:'date',    fmt: v => v },
     { key:'spends',     label:'spends',  fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        label:'cac',     fmt: v => '₹' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',        label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',       label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num' },
     { key:'prepaidPct', label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',    label:'atc',     fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',      label:'p',       fmt: fmtPct,  cls:'td-num' },
     { key:'ctr',        label:'ctr',     fmt: fmtPct,  cls:'td-num' },
-    { key:'cpm',        label:'cpm',     fmt: v => '₹' + fmtNum(v, 0), cls:'td-num' },
+    { key:'cpm',        label:'cpm',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num' },
     { key:'wowSpends',  label:'wow-sp',  fmt: fmtWoW,  cls:'td-num' },
     { key:'wowNcs',     label:'wow-nc',  fmt: fmtWoW,  cls:'td-num' },
   ]);
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Render Product
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function renderProduct(d) {
   const t = d.totals;
   renderKPIs('prodKpiGrid', [
     { label:'Spends',    value: fmtINR(t.spends),        sub: '', color:'primary' },
     { label:'NCs',       value: fmtNum(t.ncs),           sub: '', color:'green'   },
-    { label:'CAC',       value: '₹' + fmtNum(t.cac, 0), sub: '', color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',       value: '‚Çπ' + fmtNum(t.cac, 0), sub: '', color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',      value: fmtNum(t.roas, 2) + 'x',sub: '', color: t.roas > 2 ? 'green':'yellow' },
     { label:'Prepaid %', value: fmtPct(t.prepaidPct),    sub: '', color:'blue'   },
     { label:'CTR %',     value: fmtPct(t.ctr),           sub: '', color:'primary' },
@@ -611,11 +611,11 @@ function renderProduct(d) {
   const dates = d.daily.map(x => x.date);
 
   renderDualAxisChart('chartProdDaily', dates,
-    { label:'Spends (₹)', data: d.daily.map(x => x.spends), color:'#6366f1' },
+    { label:'Spends (‚Çπ)', data: d.daily.map(x => x.spends), color:'#6366f1' },
     { label:'NCs',        data: d.daily.map(x => x.ncs),    color:'#3fb950' }
   );
   renderDualAxisChart('chartProdCAC', dates,
-    { label:'CAC (₹)',  data: d.daily.map(x => x.cac),  color:'#f85149' },
+    { label:'CAC (‚Çπ)',  data: d.daily.map(x => x.cac),  color:'#f85149' },
     { label:'ROAS',     data: d.daily.map(x => x.roas), color:'#d29922' }
   );
 
@@ -626,14 +626,14 @@ function renderProduct(d) {
     { key:'name',       fmt: v => `<span class="td-name">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.campaigns,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '₹' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
     { key:'atcRate',    fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',      fmt: fmtPct,  cls:'td-num' },
     { key:'prepaidPct', fmt: fmtPct,  cls:'td-num', colorFn: v => v>50?'good':v>30?'warn':'bad' },
-    { key:'cpm',        fmt: v => '₹' + fmtNum(v,0), cls:'td-num' },
+    { key:'cpm',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num' },
   ];
   renderTable('tableCampaigns', d.campaigns, campCols);
 
@@ -642,7 +642,7 @@ function renderProduct(d) {
     { key:'campaign',   fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.adsets,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '₹' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
@@ -661,12 +661,12 @@ function renderProduct(d) {
   // Ads leaderboard
   const adsSorted = [...d.ads].sort((a,b) => b.ncs - a.ncs).slice(0, 50);
   const adCols = [
-    { key:'_rank',      fmt: (v,i) => i+1 },
+    { key:'_rank',      fmt: v => v+1 },
     { key:'name',       fmt: v => `<span class="td-name">${v}</span>` },
     { key:'adset',      fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num', bar:true, barMax: maxOf(adsSorted,'ncs'), barColor:'green' },
-    { key:'cac',        fmt: v => '₹' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
     { key:'atcRate',    fmt: fmtPct,  cls:'td-num' },
@@ -677,9 +677,9 @@ function renderProduct(d) {
   renderTable('tableAds', adsSorted, adCols);
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  KPI Cards
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function renderKPIs(containerId, items) {
   const el = document.getElementById(containerId);
   el.innerHTML = items.map(k => `
@@ -690,16 +690,16 @@ function renderKPIs(containerId, items) {
     </div>`).join('');
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Tables
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function renderTable(tableId, rows, cols) {
   const tbody = document.querySelector(`#${tableId} tbody`);
   if (!tbody) return;
   tbody.innerHTML = rows.map((row, i) => `
     <tr>${cols.map(c => {
-      const val = c.key === '_rank' ? null : row[c.key];
-      let cell  = c.fmt ? c.fmt(val, i) : (val ?? '–');
+      const val = c.key === '_rank' ? i : row[c.key];
+      let cell  = c.fmt ? c.fmt(val) : (val ?? '‚Äì');
       const cls = c.cls || '';
       if (c.colorFn) {
         const color = c.colorFn(val);
@@ -732,9 +732,9 @@ function renderTable(tableId, rows, cols) {
   });
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Charts
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function destroyChart(id) {
   if (state.charts[id]) { state.charts[id].destroy(); delete state.charts[id]; }
 }
@@ -847,9 +847,9 @@ function renderDoughnutChart(id, labels, data) {
   });
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Filter Dropdowns
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function populateFilterDropdowns(filters) {
   const catSel  = document.getElementById('catFilter');
   const prodSel = document.getElementById('prodFilter');
@@ -872,31 +872,31 @@ function populateFilterDropdowns(filters) {
   prodSel.addEventListener('change', loadData);
 }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  Formatting helpers
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function fmt(d) { return d.toISOString().split('T')[0]; }
 
 function fmtNum(v, dec=0) {
-  if (v === null || v === undefined || isNaN(v)) return '–';
+  if (v === null || v === undefined || isNaN(v)) return '‚Äì';
   return Number(v).toLocaleString('en-IN', { minimumFractionDigits:dec, maximumFractionDigits:dec });
 }
 
 function fmtINR(v) {
-  if (!v) return '₹0';
-  if (v >= 1e7) return '₹' + (v/1e7).toFixed(2) + 'Cr';
-  if (v >= 1e5) return '₹' + (v/1e5).toFixed(1) + 'L';
-  if (v >= 1e3) return '₹' + (v/1e3).toFixed(1) + 'K';
-  return '₹' + Math.round(v);
+  if (!v) return '‚Çπ0';
+  if (v >= 1e7) return '‚Çπ' + (v/1e7).toFixed(2) + 'Cr';
+  if (v >= 1e5) return '‚Çπ' + (v/1e5).toFixed(1) + 'L';
+  if (v >= 1e3) return '‚Çπ' + (v/1e3).toFixed(1) + 'K';
+  return '‚Çπ' + Math.round(v);
 }
 
 function fmtPct(v) {
-  if (v === null || isNaN(v)) return '–';
+  if (v === null || isNaN(v)) return '‚Äì';
   return Number(v).toFixed(2) + '%';
 }
 
 function fmtWoW(v) {
-  if (v === null || v === undefined || isNaN(v)) return '–';
+  if (v === null || v === undefined || isNaN(v)) return '‚Äì';
   const sign = v > 0 ? '+' : '';
   const cls  = v > 0 ? 'color:var(--green)' : v < 0 ? 'color:var(--red)' : '';
   return `<span style="${cls}">${sign}${v.toFixed(1)}%</span>`;
@@ -911,9 +911,9 @@ function abbreviate(v) {
 
 function maxOf(arr, key) { return Math.max(...arr.map(x => x[key] || 0)); }
 
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 //  UI helpers
-// ══════════════════════════════════════════════════════
+// ‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê‚ïê
 function showOverlay(msg) {
   document.getElementById('overlayText').textContent = msg;
   document.getElementById('overlay').style.display = 'flex';
@@ -934,7 +934,7 @@ function showConfigNote() {
   const note = document.createElement('div');
   note.className = 'config-note';
   note.innerHTML = `
-    <strong>⚙️ Setup Required</strong>
+    <strong>‚öôÔ∏è Setup Required</strong>
     Open <code>index.html</code> and replace <code>YOUR_DEPLOYMENT_ID_HERE</code> in the
     <code>APPS_SCRIPT_URL</code> constant at the top of the &lt;script&gt; block
     with your Google Apps Script Web App deployment URL.<br/><br/>

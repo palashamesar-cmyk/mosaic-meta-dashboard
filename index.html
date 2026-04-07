@@ -149,7 +149,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
       Meta Ads Dashboard
     </div>
     <div class="header-right">
-      <span class="last-updated" id="lastUpdated">‚Äì</span>
+      <span class="last-updated" id="lastUpdated">&#8211;</span>
       <button class="refresh-btn" onclick="loadData()">‚Üª Refresh</button>
     </div>
   </header>
@@ -215,7 +215,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="charts-row cols-2">
         <div class="chart-card">
           <div class="chart-title">CAC &amp; Prepaid % Trend</div>
-          <div class="chart-sub">Daily CAC (‚Çπ) vs Prepaid conversion %</div>
+          <div class="chart-sub">Daily CAC (&#8377;) vs Prepaid conversion %</div>
           <div class="chart-wrap"><canvas id="chartCACPrepaid"></canvas></div>
         </div>
         <div class="chart-card">
@@ -236,7 +236,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
             <thead><tr>
               <th>Product <span class="sort-icon"></span></th>
               <th>Category <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends &#8377; <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -261,7 +261,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
           <table id="tableDaily">
             <thead><tr>
               <th>Date <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends &#8377; <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -303,13 +303,13 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Campaign Level</span>
-          <span class="section-badge" id="campCount">‚Äì</span>
+          <span class="section-badge" id="campCount">&#8211;</span>
         </div>
         <div class="table-wrap">
           <table id="tableCampaigns">
             <thead><tr>
               <th>Campaign <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends &#8377; <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -329,14 +329,14 @@ tr:hover td{background:rgba(255,255,255,.025)}
       <div class="section">
         <div class="section-header">
           <span class="section-title">Ad Set Level</span>
-          <span class="section-badge" id="adsetCount">‚Äì</span>
+          <span class="section-badge" id="adsetCount">&#8211;</span>
         </div>
         <div class="table-wrap">
           <table id="tableAdsets">
             <thead><tr>
               <th>Ad Set <span class="sort-icon"></span></th>
               <th>Campaign <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends &#8377; <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">ROAS <span class="sort-icon"></span></th>
@@ -387,7 +387,7 @@ tr:hover td{background:rgba(255,255,255,.025)}
               <th>#</th>
               <th>Ad Name <span class="sort-icon"></span></th>
               <th>Ad Set <span class="sort-icon"></span></th>
-              <th class="td-num">Spends ‚Çπ <span class="sort-icon"></span></th>
+              <th class="td-num">Spends &#8377; <span class="sort-icon"></span></th>
               <th class="td-num">NCs <span class="sort-icon"></span></th>
               <th class="td-num">CAC <span class="sort-icon"></span></th>
               <th class="td-num">CTR % <span class="sort-icon"></span></th>
@@ -523,20 +523,20 @@ function renderOverall(d) {
   renderKPIs('kpiGrid', [
     { label:'Total Spends',  value: fmtINR(t.spends),       sub: fmtINR(t.spends / Math.max(1, d.daily.length)) + ' / day', color:'primary' },
     { label:'Total NCs',     value: fmtNum(t.ncs),          sub: fmtNum(t.ncs / Math.max(1, d.daily.length), 1) + ' NCs / day', color:'green'   },
-    { label:'CAC',           value: '‚Çπ' + fmtNum(t.cac, 2), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',           value: '\u20b9' + fmtNum(t.cac, 2), sub: 'Spends per NC',                        color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',          value: fmtNum(t.roas, 2) + 'x',sub: 'Revenue / Spends',                     color: t.roas > 2 ? 'green' : 'yellow' },
     { label:'Prepaid %',     value: fmtPct(t.prepaidPct),   sub: fmtNum(t.prepaid, 0) + ' prepaid NCs',  color:'blue'    },
     { label:'ATC %',         value: fmtPct(t.atcRate),      sub: 'Add to Cart rate',                     color:'purple'  },
     { label:'P %',           value: fmtPct(t.pRate),        sub: 'Purchase rate',                        color:'yellow'  },
     { label:'CTR %',         value: fmtPct(t.ctr),          sub: fmtNum(t.impressions/1e6, 2) + 'M impr',color:'primary' },
-    { label:'CPM',           value: '‚Çπ' + fmtNum(t.cpm, 0), sub: 'Cost per 1K impressions',              color:'primary' },
+    { label:'CPM',           value: '\u20b9' + fmtNum(t.cpm, 0), sub: 'Cost per 1K impressions',              color:'primary' },
   ]);
 
   const dates = d.daily.map(x => x.date);
 
   // Chart 1: Spends + NCs dual axis
   renderDualAxisChart('chartDailyMain', dates,
-    { label:'Spends (‚Çπ)', data: d.daily.map(x => x.spends), color:'#6366f1' },
+    { label:'Spends (\u20b9)', data: d.daily.map(x => x.spends), color:'#6366f1' },
     { label:'NCs',        data: d.daily.map(x => x.ncs),    color:'#3fb950' }
   );
 
@@ -548,7 +548,7 @@ function renderOverall(d) {
 
   // Chart 3: CAC + Prepaid% dual axis
   renderDualAxisChart('chartCACPrepaid', dates,
-    { label:'CAC (‚Çπ)',     data: d.daily.map(x => x.cac),        color:'#f85149' },
+    { label:'CAC (\u20b9)',     data: d.daily.map(x => x.cac),        color:'#f85149' },
     { label:'Prepaid %',  data: d.daily.map(x => x.prepaidPct), color:'#58a6ff' }
   );
 
@@ -564,13 +564,13 @@ function renderOverall(d) {
     { key:'category',    label:'cat',     fmt: v => `<span style="color:var(--text2)">${v}</span>` },
     { key:'spends',      label:'spends',  fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.products,'spends') },
     { key:'ncs',         label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',         label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',         label:'cac',     fmt: v => '\u20b9' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',        label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num', colorFn: v => v > 2 ? 'good' : v > 1 ? 'warn' : 'bad' },
     { key:'prepaidPct',  label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',     label:'atc',     fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',       label:'p',       fmt: fmtPct,  cls:'td-num' },
     { key:'ctr',         label:'ctr',     fmt: fmtPct,  cls:'td-num' },
-    { key:'cpm',         label:'cpm',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num' },
+    { key:'cpm',         label:'cpm',     fmt: v => '\u20b9' + fmtNum(v, 0), cls:'td-num' },
   ]);
 
   // Daily table (reversed: newest first)
@@ -579,13 +579,13 @@ function renderOverall(d) {
     { key:'date',       label:'date',    fmt: v => v },
     { key:'spends',     label:'spends',  fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        label:'ncs',     fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        label:'cac',     fmt: v => '‚Çπ' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
+    { key:'cac',        label:'cac',     fmt: v => '\u20b9' + fmtNum(v, 2), cls:'td-num', colorFn: v => v < 1500 ? 'good' : v < 2500 ? 'warn' : 'bad' },
     { key:'roas',       label:'roas',    fmt: v => fmtNum(v, 2) + 'x', cls:'td-num' },
     { key:'prepaidPct', label:'prepaid', fmt: fmtPct,  cls:'td-num', colorFn: v => v > 50 ? 'good' : v > 30 ? 'warn' : 'bad' },
     { key:'atcRate',    label:'atc',     fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',      label:'p',       fmt: fmtPct,  cls:'td-num' },
     { key:'ctr',        label:'ctr',     fmt: fmtPct,  cls:'td-num' },
-    { key:'cpm',        label:'cpm',     fmt: v => '‚Çπ' + fmtNum(v, 0), cls:'td-num' },
+    { key:'cpm',        label:'cpm',     fmt: v => '\u20b9' + fmtNum(v, 0), cls:'td-num' },
     { key:'wowSpends',  label:'wow-sp',  fmt: fmtWoW,  cls:'td-num' },
     { key:'wowNcs',     label:'wow-nc',  fmt: fmtWoW,  cls:'td-num' },
   ]);
@@ -599,7 +599,7 @@ function renderProduct(d) {
   renderKPIs('prodKpiGrid', [
     { label:'Spends',    value: fmtINR(t.spends),        sub: '', color:'primary' },
     { label:'NCs',       value: fmtNum(t.ncs),           sub: '', color:'green'   },
-    { label:'CAC',       value: '‚Çπ' + fmtNum(t.cac, 2), sub: '', color: t.cac < 2000 ? 'green':'red' },
+    { label:'CAC',       value: '\u20b9' + fmtNum(t.cac, 2), sub: '', color: t.cac < 2000 ? 'green':'red' },
     { label:'ROAS',      value: fmtNum(t.roas, 2) + 'x',sub: '', color: t.roas > 2 ? 'green':'yellow' },
     { label:'Prepaid %', value: fmtPct(t.prepaidPct),    sub: '', color:'blue'   },
     { label:'CTR %',     value: fmtPct(t.ctr),           sub: '', color:'primary' },
@@ -611,11 +611,11 @@ function renderProduct(d) {
   const dates = d.daily.map(x => x.date);
 
   renderDualAxisChart('chartProdDaily', dates,
-    { label:'Spends (‚Çπ)', data: d.daily.map(x => x.spends), color:'#6366f1' },
+    { label:'Spends (\u20b9)', data: d.daily.map(x => x.spends), color:'#6366f1' },
     { label:'NCs',        data: d.daily.map(x => x.ncs),    color:'#3fb950' }
   );
   renderDualAxisChart('chartProdCAC', dates,
-    { label:'CAC (‚Çπ)',  data: d.daily.map(x => x.cac),  color:'#f85149' },
+    { label:'CAC (\u20b9)',  data: d.daily.map(x => x.cac),  color:'#f85149' },
     { label:'ROAS',     data: d.daily.map(x => x.roas), color:'#d29922' }
   );
 
@@ -626,14 +626,14 @@ function renderProduct(d) {
     { key:'name',       fmt: v => `<span class="td-name">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.campaigns,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '\u20b9' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
     { key:'atcRate',    fmt: fmtPct,  cls:'td-num' },
     { key:'pRate',      fmt: fmtPct,  cls:'td-num' },
     { key:'prepaidPct', fmt: fmtPct,  cls:'td-num', colorFn: v => v>50?'good':v>30?'warn':'bad' },
-    { key:'cpm',        fmt: v => '‚Çπ' + fmtNum(v,0), cls:'td-num' },
+    { key:'cpm',        fmt: v => '\u20b9' + fmtNum(v,0), cls:'td-num' },
   ];
   renderTable('tableCampaigns', d.campaigns, campCols);
 
@@ -642,7 +642,7 @@ function renderProduct(d) {
     { key:'campaign',   fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num', bar:true, barMax: maxOf(d.adsets,'spends') },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '\u20b9' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'roas',       fmt: v => fmtNum(v,2)+'x',   cls:'td-num', colorFn: v => v>2?'good':v>1?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
@@ -666,7 +666,7 @@ function renderProduct(d) {
     { key:'adset',      fmt: v => `<span class="td-name" style="color:var(--text2);font-size:11px">${v}</span>` },
     { key:'spends',     fmt: fmtINR,  cls:'td-num' },
     { key:'ncs',        fmt: fmtNum,  cls:'td-num', bar:true, barMax: maxOf(adsSorted,'ncs'), barColor:'green' },
-    { key:'cac',        fmt: v => '‚Çπ' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
+    { key:'cac',        fmt: v => '\u20b9' + fmtNum(v,2), cls:'td-num', colorFn: v => v<1500?'good':v<2500?'warn':'bad' },
     { key:'ctr',        fmt: fmtPct,  cls:'td-num' },
     { key:'hookRate',   fmt: fmtPct,  cls:'td-num' },
     { key:'atcRate',    fmt: fmtPct,  cls:'td-num' },
@@ -699,7 +699,7 @@ function renderTable(tableId, rows, cols) {
   tbody.innerHTML = rows.map((row, i) => `
     <tr>${cols.map(c => {
       const val = c.key === '_rank' ? i : row[c.key];
-      let cell  = c.fmt ? c.fmt(val) : (val ?? '‚Äì');
+      let cell  = c.fmt ? c.fmt(val) : (val ?? '\u2013');
       const cls = c.cls || '';
       if (c.colorFn) {
         const color = c.colorFn(val);
@@ -878,26 +878,26 @@ function populateFilterDropdowns(filters) {
 function fmt(d) { return d.toISOString().split('T')[0]; }
 
 function fmtNum(v, dec=0) {
-  if (v === null || v === undefined || isNaN(v)) return '‚Äì';
+  if (v === null || v === undefined || isNaN(v)) return '\u2013';
   return Number(v).toLocaleString('en-IN', { minimumFractionDigits:dec, maximumFractionDigits:dec });
 }
 
 function fmtINR(v) {
-  if (!v && v !== 0) return '‚Äì';
-  if (!v) return '‚Çπ0';
-  if (v >= 1e7) return '‚Çπ' + (v/1e7).toFixed(2) + 'Cr';
-  if (v >= 1e5) return '‚Çπ' + (v/1e5).toFixed(2) + 'L';
-  if (v >= 1e3) return '‚Çπ' + (v/1e3).toFixed(2) + 'K';
-  return '‚Çπ' + v.toFixed(2);
+  if (!v && v !== 0) return '\u2013';
+  if (!v) return '\u20b90';
+  if (v >= 1e7) return '\u20b9' + (v/1e7).toFixed(2) + 'Cr';
+  if (v >= 1e5) return '\u20b9' + (v/1e5).toFixed(2) + 'L';
+  if (v >= 1e3) return '\u20b9' + (v/1e3).toFixed(2) + 'K';
+  return '\u20b9' + v.toFixed(2);
 }
 
 function fmtPct(v) {
-  if (v === null || isNaN(v)) return '‚Äì';
+  if (v === null || isNaN(v)) return '\u2013';
   return Number(v).toFixed(2) + '%';
 }
 
 function fmtWoW(v) {
-  if (v === null || v === undefined || isNaN(v)) return '‚Äì';
+  if (v === null || v === undefined || isNaN(v)) return '\u2013';
   const sign = v > 0 ? '+' : '';
   const cls  = v > 0 ? 'color:var(--green)' : v < 0 ? 'color:var(--red)' : '';
   return `<span style="${cls}">${sign}${v.toFixed(1)}%</span>`;
